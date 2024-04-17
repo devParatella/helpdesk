@@ -1,0 +1,34 @@
+<%- include('../header') %>
+
+  <% if ( chamados !='' ) { chamados.forEach((row, index)=> { %>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 mx-auto mt-4">
+          <div class="card shadow">
+            <div class="card-header bg-dark">
+              <h3 class="text-light">Editar Vaga de Emprego ( ID <%= row.id %> ) </h3>
+            </div>
+            <div class="card-body p-4">
+              <form action="/chamado/<%= row.id %>" method="POST">
+                <div class="mb-3">
+                  <label for="name" class="col-sm-3 col-form-label col-form-label-lg">Nome:</label>
+                  <input type="text" name="name" class="form-control form-control-lg" placeholder="Informe o nome..."
+                    value="<%= row.nome %>" required />
+                </div>
+                <div class="mb-3">
+                  <label for="salary" class="col-sm-3 col-form-label col-form-label-lg">Salário:</label>
+                  <input type="number" step="0.010" name="salary" class="form-control form-control-lg"
+                    placeholder="Digite o valor do salário..." value="<%= row.salario %>" required />
+                </div>
+                <div class="mb-3 d-grid">
+                  <input type="submit" name="submit" value="Gravar" class="btn btn-dark btn-lg" />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% }) } %>
+
+<%- include('../footer') %>

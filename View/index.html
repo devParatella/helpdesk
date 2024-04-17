@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Chamados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Gerenciador de Chamados</h1>
+    </header>
+
+    <nav>
+        <ul>
+
+            <li><button id="abrirChamado">Abrir novo chamado</button></li>
+            <select id="tipoPesquisa">
+                <option value="nome_solicitante">Nome do Solicitante</option>
+                <option value="departamento">Departamento</option>
+                <option value="prioridade">Prioridade</option>
+                <option value="responsavel_chamado">Responsável pelo Chamado</option>
+            </select>
+            </li>
+            <li><input type="text" id="barraPesquisa" placeholder="Pesquisar chamados por qualquer dado..."></li>
+            <li><button id="pesquisarChamadosBtn">Pesquisar Chamados</button></li>
+            <li id="resultadoPesquisa"></li>
+        </ul>
+    </nav>
+
+    <section id="novo-chamado" class="aba" style="display: none;">
+        <h2>Abrir um novo chamado</h2>
+
+        <form id="formCriarChamado">
+
+            <label for="nomeSolicitante">Nome do Solicitante:</label>
+            <input type="text" id="nomeSolicitante" name="nomeSolicitante" placeholder="Digite o nome do solicitante">
+
+            <label for="contatoSolicitante">Contato do Solicitante:</label>
+            <input type="text" id="contatoSolicitante" name="contatoSolicitante"
+                placeholder="Digite o contato do solicitante">
+
+            <label for="departamento">Departamento:</label>
+            <select id="departamento" name="departamento">
+                <option value="Comercial">Comercial</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Financeiro">Financeiro</option>
+                <option value="Compras">Compras</option>
+                <option value="Recursos humanos">Recursos Humanos</option>
+                <option value="Operações">Operações</option>
+            </select>
+
+            <label for="prioridade">Prioridade:</label>
+            <select id="prioridade" name="prioridade">
+                <option value="Baixa">Baixa</option>
+                <option value="Média">Média</option>
+                <option value="Alta">Alta</option>
+            </select>
+
+            <label for="descricaoProblema">Descrição:</label>
+            <input type="text" id="descricaoProblema" name="descricaoProblema" placeholder="Descreva o problema">
+
+            <label for="comentariosSolicitante">Comentários do solicitante:</label>
+            <input type="text" id="comentariosSolicitante" name="comentariosSolicitante"
+                placeholder="Digite os comentários do solicitante">
+
+            <label for="anexos">Anexos (Documentos, imagens, Links...):</label>
+            <input type="text" id="anexos" name="anexos" placeholder="Insira os anexos">
+
+            <label for="notasInternas">Notas internas:</label>
+            <input type="text" id="notasInternas" name="notasInternas" placeholder="Digite as notas internas">
+
+            <label for="responsavelChamado">Responsável pelo chamado:</label>
+            <input type="text" id="responsavelChamado" name="responsavelChamado"
+                placeholder="Digite o responsável pelo chamado">
+
+            <button type="submit" id="criarChamadoBtn">Criar Chamado</button>
+
+        </form>
+
+    </section>
+
+    <section id="atualizar-chamado" class="aba">
+        <h2>Atualizar Chamado</h2>
+        <!-- Seção para atualizar chamado -->
+    </section>
+
+    <section id="deletar-chamado" class="aba">
+        <h2>Deletar Chamado</h2>
+        <!-- Seção para deletar chamado -->
+    </section>
+
+    <section id="listar-chamados" class="aba">
+        <h2>Chamados</h2>
+        <table id="tabelaChamados">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Data e Hora de Abertura</th>
+                    <th>Nome do Solicitante</th>
+                    <th>Contato do Solicitante</th>
+                    <th>Departamento</th>
+                    <th>Prioridade</th>
+                    <th>Descrição do Problema</th>
+                    <th>Comentários do Solicitante</th>
+                    <th>Anexos</th>
+                    <th>Notas Internas</th>
+                    <th>Responsável pelo Chamado</th>
+                    <th>Estado do Chamado</th>
+                    <th>Data e Hora de Resolução</th>
+                </tr>
+            </thead>
+            <tbody id="corpoTabelaChamados">
+                <!-- Aqui serão inseridas as linhas da tabela com os dados das Chamados -->
+            </tbody>
+        </table>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

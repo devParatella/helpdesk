@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Chamados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Gerenciador de Chamados</h1>
+
+    <button id="obterTodosChamadosBtn">Obter Todos os Chamados</button>
+
+    <h2>Abrir um novo chamado</h2>
+    <form id="formCriarChamado">
+
+    <label for="nomeSolicitante">Nome do Solicitante:</label>
+    <input type="text" id="nomeSolicitante" name="nomeSolicitante">
+    <br>
+    <label for="contatoSolicitante">Contato do Solicitante:</label>
+    <input type="text" id="contatoSolicitante" name="contatoSolicitante">
+    <br>
+    <label for="departamento">Departamento:</label>
+    <select id="departamento" name="departamento">
+        <option value="Comercial">Comercial</option>
+        <option value="Marketing">Marketing</option>
+        <option value="Financeiro">Financeiro</option>
+        <option value="Compras">Compras</option>
+        <option value="Recursos humanos">Recursos Humanos</option>
+        <option value="Operações">Operações</option>
+    </select>
+    <br>
+    <label for="prioridade">Prioridade:</label>
+    <select id="prioridade" name="prioridade">
+        <option value="Baixa">Baixa</option>
+        <option value="Média">Média</option>
+        <option value="Alta">Alta</option>
+    </select>
+    <br>
+    <label for="descricaoProblema">Descrição:</label>
+    <input type="text" id="descricaoProblema" name="descricaoProblema">
+    <br>
+    <label for="comentariosSolicitante">Comentarios do solicitante:</label>
+    <input type="text" id="comentariosSolicitante" name="comentariosSolicitante">
+    <br>
+    <label for="anexos">Anexos(Documentos, imagens, Links . . .):</label>
+    <input type="text" id="anexos" name="anexos">
+    <br>
+    <label for="notasInternas">notas internas:</label>
+    <input type="text" id="notasInternas" name="notasInternas">
+    <br>
+    <label for="responsavelChamado">Responsável pelo chamado:</label>
+    <input type="text" id="responsavelChamado" name="responsavelChamado">
+    <br>
+    <button type="submit" id="criarChamadoBtn"  onsubmit="event.preventDefault(); criarChamado()">Criar Chamado</button>
+    
+</form>
+
+
+    <h2>Atualizar Chamado</h2>
+    <label for="idChamadoAtualizar">ID da Chamado:</label>
+    <input type="text" id="idChamadoAtualizar">
+    <br>
+    <label for="tituloAtualizar">Novo Título:</label>
+    <input type="text" id="tituloAtualizar">
+    <br>
+    <label for="descricaoAtualizar">Nova Descrição:</label>
+    <input type="text" id="descricaoAtualizar">
+    <br>
+    <button id="atualizarChamadoBtn">Atualizar Chamado</button>
+
+    <h2>Deletar Chamado</h2>
+    <label for="idChamadoDeletar">ID da Chamado:</label>
+    <input type="text" id="idChamadoDeletar">
+    <br>
+    <button id="deletarChamadoBtn">Deletar Chamado</button>
+
+    <h2>Chamados</h2>
+    <table id="tabelaChamados">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Data e Hora de Abertura</th>
+                <th>Nome do Solicitante</th>
+                <th>Contato do Solicitante</th>
+                <th>Departamento</th>
+                <th>Prioridade</th>
+                <th>Descrição do Problema</th>
+                <th>Comentários do Solicitante</th>
+                <th>Anexos</th>
+                <th>Notas Internas</th>
+                <th>Responsável pelo Chamado</th>
+                <th>Estado do Chamado</th>
+                <th>Data e Hora de Resolução</th>
+            </tr>
+        </thead>
+        <tbody id="corpoTabelaChamados">
+            <!-- Aqui serão inseridas as linhas da tabela com os dados das Chamados -->
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
